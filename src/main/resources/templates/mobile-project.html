@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title th:text="${project.title + ' — Md. Raju Mia'}">Project — Md. Raju Mia</title>
+  <meta name="description" th:content="${project.description}">
+  <link rel="icon" href="/assets/frontend/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/mobile-portfolio.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-header wrap">
+  <a class="brand" href="/"><span class="monogram">RM</span> Md. Raju Mia</a>
+  <nav aria-label="Main navigation">
+    <a href="/#projects">Work</a>
+    <a href="/#experience">Experience</a>
+    <a href="/#about">Skills</a>
+    <a href="/#contact">Contact</a>
+  </nav>
+</header>
+<main class="wrap detail" id="content">
+  <a class="back" href="/#projects">← All mobile projects</a>
+  <section class="detail-intro">
+    <p class="eyebrow" th:text="${(project.platform == 'Flutter' ? 'Flutter' : 'Native Android') + ' / ' + project.domain}"></p>
+    <h1 th:text="${project.title}"></h1>
+    <p class="lead" th:text="${project.description}"></p>
+    <ul class="tags"><li th:each="technology : ${project.stack}" th:text="${technology}"></li></ul>
+  </section>
+  <section class="features">
+    <h2>What the app does</h2>
+    <ul><li th:each="feature : ${#strings.arraySplit(project.features, '·')}" th:text="${#strings.trim(feature)}"></li></ul>
+  </section>
+  <section class="gallery" th:unless="${project.images.isEmpty()}">
+    <h2>App screens <span class="screen-count" th:text="${project.images.size()}"></span></h2>
+    <div class="gallery-grid">
+      <figure th:each="screen : ${project.images}">
+        <a th:href="${screen.url}" th:attr="aria-label=${'Open screenshot: ' + screen.caption}">
+          <img th:src="${screen.url}" th:alt="${screen.caption}" loading="lazy">
+        </a>
+        <figcaption th:text="${screen.caption}"></figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+<footer class="site-footer wrap">
+  <span>Md. Raju Mia</span>
+  <div><a href="https://github.com/Md-Raju-Mia">GitHub ↗</a><a href="https://www.linkedin.com/in/raju-muhammad-se/">LinkedIn ↗</a></div>
+</footer>
+</body>
+</html>
