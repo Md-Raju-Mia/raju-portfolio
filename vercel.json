@@ -1,0 +1,12 @@
+{
+  "outputDirectory": "public",
+  "buildCommand": "",
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/work/lunacar",
+      "destination": "/work/ble-fuel-pump",
+      "permanent": true
+    }
+  ]
+}
