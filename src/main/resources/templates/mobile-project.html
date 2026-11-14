@@ -31,12 +31,11 @@
     <ul class="tags"><li th:each="technology : ${project.stack}" th:text="${technology}"></li></ul>
   </section>
   <section class="features">
-    <h2>What the app does</h2>
+    <h2>Modules I built</h2>
     <ul><li th:each="feature : ${#strings.arraySplit(project.features, '·')}" th:text="${#strings.trim(feature)}"></li></ul>
   </section>
   <section class="gallery" th:unless="${project.images.isEmpty()}">
     <h2>App screens <span class="screen-count" th:text="${project.images.size()}"></span></h2>
-    <p th:if="${project.slug == 'brac-fleet-user'}">These screenshots show the similar interface in the <a class="back" href="/work/fleetwise-user"><u>FleetWise Flutter app</u></a>.</p>
     <div class="gallery-grid">
       <figure th:each="screen : ${project.images}">
         <a th:href="${screen.url}" th:attr="aria-label=${'Open screenshot: ' + screen.caption}">

@@ -69,7 +69,11 @@ record MobileProject(String slug, String title, String platform, String domain,
                 new Screen("/assets/apps/inforcloud-java/picture-permission.png", "Camera access for scanning"))),
         new MobileProject("ble-fuel-pump", "BLE Fuel Pump Control", "Android", "Fuel operations", "An Android app for fuel operations, from operator authentication and fuel entry to reporting and printing transaction vouchers.",
             "Operator authentication · Fuel entry · Report generation · Bluetooth printing", List.of("Java", "MVC", "BLE"),
-            List.of(new Screen("/assets/apps/lunacar-java/datepicker.png", "Report date selection"))),
+            List.of(
+                new Screen("/assets/apps/lunacar-java/fuel-entry-redacted.png", "Fuel entry (redacted)"),
+                new Screen("/assets/apps/lunacar-java/bluetooth-printer-redacted.png", "Bluetooth printer selection (redacted)"),
+                new Screen("/assets/apps/lunacar-java/monthly-report-redacted.png", "Monthly fuel report (redacted)"),
+                new Screen("/assets/apps/lunacar-java/datepicker.png", "Report date selection"))),
         new MobileProject("mobile-device-management", "Mobile Device Management", "Android", "Device administration", "A mobile device management app that retrieves configuration from a server. I contributed to Android device management work during my internship at INovex.",
             "Device configuration · REST API integration", List.of("Java", "Android"),
             List.of(new Screen("/assets/apps/mdm-java/Screenshot-20241010-235505.png", "Device configuration request"),
@@ -80,9 +84,9 @@ record MobileProject(String slug, String title, String platform, String domain,
         new MobileProject("brac-fleet-user", "BRAC Fleet User", "Android", "Fleet operations", "The native Android app supports trip requisitions, pick-and-drop services and buying or selling seats through Shohochor.",
             "Trip requests · Pick and drop · Seat sharing", List.of("Java", "MVP"),
             List.of(
+                new Screen("/assets/apps/user-app-flutter/auto-allocation.png", "Automatic vehicle allocation (Flutter)"),
                 new Screen("/assets/apps/user-app-flutter/onboarding-page2.png", "Fleet services overview (Flutter)"),
                 new Screen("/assets/apps/user-app-flutter/home-screen.png", "Transport services home (Flutter)"),
-                new Screen("/assets/apps/user-app-flutter/auto-allocation.png", "Automatic vehicle allocation (Flutter)"),
                 new Screen("/assets/apps/user-app-flutter/seat-available.png", "Seat availability (Flutter)")))
     );
 }
