@@ -31,7 +31,9 @@
     <ul class="tags"><li th:each="technology : ${project.stack}" th:text="${technology}"></li></ul>
   </section>
   <section class="features">
-    <h2>Modules I built</h2>
+    <h2>My contribution</h2>
+    <p class="lead" th:text="${project.contribution}"></p>
+    <h3>Modules I built</h3>
     <ul><li th:each="feature : ${#strings.arraySplit(project.features, '·')}" th:text="${#strings.trim(feature)}"></li></ul>
   </section>
   <section class="gallery" th:unless="${project.images.isEmpty()}">
