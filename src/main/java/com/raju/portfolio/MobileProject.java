@@ -79,6 +79,10 @@ record MobileProject(String slug, String title, String platform, String domain,
                 new Screen("/assets/apps/mdm-java/Screenshot-20241011-000125.png", "Test message overlay"))),
         new MobileProject("brac-fleet-user", "BRAC Fleet User", "Android", "Fleet operations", "The native Android app supports trip requisitions, pick-and-drop services and buying or selling seats through Shohochor.",
             "Trip requests · Pick and drop · Seat sharing", List.of("Java", "MVP"),
-            List.of())
+            List.of(
+                new Screen("/assets/apps/user-app-flutter/onboarding-page2.png", "Fleet services overview (Flutter)"),
+                new Screen("/assets/apps/user-app-flutter/home-screen.png", "Transport services home (Flutter)"),
+                new Screen("/assets/apps/user-app-flutter/auto-allocation.png", "Automatic vehicle allocation (Flutter)"),
+                new Screen("/assets/apps/user-app-flutter/seat-available.png", "Seat availability (Flutter)")))
     );
 }

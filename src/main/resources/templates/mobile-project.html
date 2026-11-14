@@ -36,6 +36,7 @@
   </section>
   <section class="gallery" th:unless="${project.images.isEmpty()}">
     <h2>App screens <span class="screen-count" th:text="${project.images.size()}"></span></h2>
+    <p th:if="${project.slug == 'brac-fleet-user'}">These screenshots show the similar interface in the <a class="back" href="/work/fleetwise-user"><u>FleetWise Flutter app</u></a>.</p>
     <div class="gallery-grid">
       <figure th:each="screen : ${project.images}">
         <a th:href="${screen.url}" th:attr="aria-label=${'Open screenshot: ' + screen.caption}">
